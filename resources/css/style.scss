@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap');
+
+$background: linear-gradient(90deg, #ffefdb 0%,  #ffecd5 100%);
+$card-color:#fff6ec;
+main{
+    margin-left:10px;
+    margin-right:10px;
+}
+body{
+    background: $background;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.navbar{
+    box-shadow: 0px 4px 15px rgb(0 0 0 / 25%);
+    background: #ffcf97;
+    margin-bottom: 20px;
+    color:white;
+}
+
+
+
+h1,h2,h3,h4,h5{
+    font-weight: 700;
+}
+
+.card{
+    background: $card-color;
+    box-shadow: 0px 4px 15px rgb(0 0 0 / 25%);
+    &-body{
+        background:  $card-color;
+    }
+}
+
+.goods{
+    &__card{
+        border: 1px black solid;
+        display: inline-block;
+        
+    }
+    &__shops{
+        padding-top:100px;
+    }
+}
+
+.shop-list{
+    padding: 0px;
+    &__item{
+        list-style-type: none;
+        font-weight: 700;
+        &:after{
+            content: "•";
+            padding-left: 7px;
+            color:red;
+        }
+    }
+    &__item_active{
+        &:after{
+        color:green;
+    } }
+}
+
+.review-add{
+    margin-left: auto;
+    margin-right:auto;
+}

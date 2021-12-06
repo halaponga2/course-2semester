@@ -1,0 +1,59 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap");
+main {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+body {
+  background: linear-gradient(90deg, #ffefdb 0%, #ffecd5 100%);
+  font-family: "Open Sans Condensed", sans-serif;
+}
+
+.navbar {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  background: #ffcf97;
+  margin-bottom: 20px;
+  color: white;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 700;
+}
+
+.card {
+  background: #fff6ec;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+}
+.card-body {
+  background: #fff6ec;
+}
+
+.goods__card {
+  border: 1px black solid;
+  display: inline-block;
+}
+.goods__shops {
+  padding-top: 100px;
+}
+
+.shop-list {
+  padding: 0px;
+}
+.shop-list__item {
+  list-style-type: none;
+  font-weight: 700;
+}
+.shop-list__item:after {
+  content: "•";
+  padding-left: 7px;
+  color: red;
+}
+.shop-list__item_active:after {
+  color: green;
+}
+
+.review-add {
+  margin-left: auto;
+  margin-right: auto;
+}/*# sourceMappingURL=style.css.map */
