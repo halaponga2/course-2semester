@@ -8,7 +8,7 @@
         @foreach($goods as $good)
         <div class="d-inline-flex p-2">
             <div class="card" style="width: 18rem;">
-                <img src="/course/storage/app/{{$good->image}}" class="card-img-top img-thumbnail" alt="...">
+                <img src="{{ Storage::url($good->image) }}" class="card-img-top img-thumbnail" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{$good->name}}</h5>
                     <p class="card-text">{{$good->description}} </p>

@@ -6,7 +6,7 @@
             <div class="col">
                 <div class="goods__card">
                 <h1>{{$good->name}}</h1>
-                <img src="/course/storage/app/{{$good->image}}" class="" style="max-width:300px" alt="...">
+                <img src="{{ Storage::url($good->image) }}" class="" style="max-width:300px" alt="...">
                 
                 <p><b>Категория:</b>
                     @switch($good->type)
