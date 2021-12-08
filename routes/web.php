@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GoodsController;
 use App\Http\Controllers\GoodsReviewsController;
+use App\Http\Controllers\AboutController;
 
 Route::get('/', function () {
     return view('main');
@@ -27,3 +28,5 @@ Route::get('/goods/{id}', [GoodsController::class, 'show']);
 
 Route::post('/goods/{id}/reviews',[GoodsReviewsController::class,'store']);
 Route::get('/goods/reviews/destroy/{id}',[GoodsReviewsController::class,'destroy']);
+
+Route::get('/about', [AboutController::class,'index']);
