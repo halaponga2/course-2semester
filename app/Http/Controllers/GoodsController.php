@@ -45,6 +45,8 @@ class GoodsController extends Controller
         $good = Goods::findOrFail($id);
         unlink(storage_path('app/'.$good->image));
         $good->shops()->detach();
+        $reviews=GoodsReviews::where('goods_id',$id);
+        $reviews->delete();
         $good->delete();
         return redirect('/goods');
     }
