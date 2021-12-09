@@ -13,4 +13,8 @@ class Shops extends Model
     public function goods(){
         return $this->belongsToMany(Goods::class)->withPivot('available');
     }
+
+    public function employees(){
+        return $this->hasMany(employees::class, 'employees_id');
+    }
 }
