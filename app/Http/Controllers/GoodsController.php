@@ -43,7 +43,7 @@ class GoodsController extends Controller
 
     public function destroy($id){
         $good = Goods::findOrFail($id);
-        unlink(storage_path('app/'.$good->imageg));
+        unlink(storage_path('app/'.$good->image));
         $good->shops()->detach();
         $good->delete();
         return redirect('/goods');
