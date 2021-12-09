@@ -58,6 +58,13 @@ h1, h2, h3, h4, h5 {
 .goods__card {
   display: inline-block;
 }
+.goods__types {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+  padding-left: 5px;
+  flex-wrap: wrap;
+}
 .goods__shops {
   padding-top: 100px;
 }

@@ -4,7 +4,7 @@
 
     <main>
         <h1>Товары</h1>
-        <ul style="display:flex; gap:20px; list-style-type:none; padding-left:5px">
+        <ul class="goods__types">
             <li style="padding-left:5px"><a href="/goods/filter?type=drinks">Напитки</a></li>
             <li style="padding-left:5px"><a href="/goods/filter?type=frozen">Полуфабрикаты</a></li>
             <li style="padding-left:5px"><a href="/goods/filter?type=seafood">Морепродукты</a></li>
