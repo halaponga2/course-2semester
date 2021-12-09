@@ -6,7 +6,7 @@
             <div class="col">
                 <div class="goods__card">
                 <h1>{{$good->name}}</h1>
-                <img src="{{ Storage::url($good->image) }}" class="" style="max-width:300px" alt="...">
+                <img src="{{ Storage::url($good->image) }}" class="card__image"  alt="card image">
                 
                 <p><b>Категория:</b>
                     @switch($good->type)
@@ -75,11 +75,11 @@
 
             
             <div class="form-group">
-                <label for="comment-title">Введите имя</label>
+                <label for="review-name">Введите имя</label>
                 <input type="text" name="name" id="review-name" class="form-control">
             </div>
             <div class="form-group mt-3">
-                <label for="comment-text">Введите текст</label>
+                <label for="review-comment">Введите текст</label>
                 <textarea name="comment" id="review-comment" class="form-control" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary mt-3">Отправить</button>

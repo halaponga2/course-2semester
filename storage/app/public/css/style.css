@@ -1,13 +1,26 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap");
+html {
+  height: 100%;
+}
+
 main {
   margin-left: 10px;
   margin-right: 10px;
+  flex: 1 0 auto;
 }
 
 body {
   background: linear-gradient(90deg, #ffefdb 0%, #ffecd5 100%);
   font-family: "Open Sans Condensed", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-size: large;
+}
+
+header {
+  flex: 0 0 auto;
 }
 
 .navbar {
@@ -15,6 +28,19 @@ body {
   background: #ffcf97;
   margin-bottom: 20px;
   color: white;
+}
+
+footer {
+  box-shadow: 4px 0px 15px rgba(0, 0, 0, 0.25);
+  background: #ffcf97;
+  margin-top: 20px;
+  flex: 0 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.mainpage__text {
+  max-width: 300px;
 }
 
 h1, h2, h3, h4, h5 {
@@ -34,6 +60,13 @@ h1, h2, h3, h4, h5 {
 }
 .goods__shops {
   padding-top: 100px;
+}
+
+.card__image {
+  width: 286px;
+  height: 286px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .shop-list {

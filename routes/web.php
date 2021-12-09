@@ -14,6 +14,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/goods', [GoodsController::class, 'index']);
+Route::get('/goods/filter',[GoodsController::class, 'filter']);
 
 Route::get('/createGoods', function () {
     return view('createGoods');

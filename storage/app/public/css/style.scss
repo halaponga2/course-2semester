@@ -2,14 +2,25 @@
 
 $background: linear-gradient(90deg, #ffefdb 0%,  #ffecd5 100%);
 $card-color:#fff6ec;
+html{
+    height: 100%;
+}
 main{
     margin-left:10px;
     margin-right:10px;
+    flex: 1 0 auto;
 }
 body{
     background: $background;
     font-family: 'Open Sans Condensed', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-size: large;
 }
+header{
+    flex: 0 0 auto;
+ }
 
 .navbar{
     box-shadow: 0px 4px 15px rgb(0 0 0 / 25%);
@@ -18,7 +29,21 @@ body{
     color:white;
 }
 
+footer{
+    box-shadow: 4px 0px 15px rgb(0 0 0 / 25%);
+    background: #ffcf97;
+    margin-top: 20px;
+    flex: 0 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
 
+.mainpage{
+    &__text{
+        max-width: 300px;
+    }
+}
 
 h1,h2,h3,h4,h5{
     font-weight: 700;
@@ -39,6 +64,14 @@ h1,h2,h3,h4,h5{
     }
     &__shops{
         padding-top:100px;
+    }
+}
+
+.card{
+    &__image{
+        width: 286px;
+        height: 286px;
+        object-fit: cover;
     }
 }
 

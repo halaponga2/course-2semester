@@ -4,11 +4,17 @@
 
     <main>
         <h1>Товары</h1>
-        
+        <ul style="display:flex; gap:20px; list-style-type:none; padding-left:5px">
+            <li style="padding-left:5px"><a href="/goods/filter?type=drinks">Напитки</a></li>
+            <li style="padding-left:5px"><a href="/goods/filter?type=frozen">Полуфабрикаты</a></li>
+            <li style="padding-left:5px"><a href="/goods/filter?type=seafood">Морепродукты</a></li>
+            <li style="padding-left:5px"><a href="/goods/filter?type=bakery">Выпечка</a></li>
+            <li style="padding-left:5px"><a href="/goods/filter?type=milks">Молочка</a></li>
+        </ul>
         @foreach($goods as $good)
         <div class="d-inline-flex p-2">
             <div class="card" style="width: 18rem;">
-                <img src="{{ Storage::url($good->image) }}" class="card-img-top img-thumbnail" alt="...">
+                <img src="{{ Storage::url($good->image) }}" class="card-img-top img-thumbnail card__image" alt="card image">
                 <div class="card-body">
                     <h5 class="card-title">{{$good->name}}</h5>
                     <p class="card-text">{{$good->description}} </p>

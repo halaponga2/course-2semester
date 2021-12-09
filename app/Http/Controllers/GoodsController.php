@@ -35,6 +35,12 @@ class GoodsController extends Controller
         return view('goods', ['goods' =>$good]);
     }
 
+    public function filter(){
+        $type=request('type');
+        $good= Goods::where('type',$type)->get();
+        return view('goods',['goods'=>$good]);
+    }
+
     public function destroy($id){
         $good = Goods::findOrFail($id);
         Storage::delete($good->image);
