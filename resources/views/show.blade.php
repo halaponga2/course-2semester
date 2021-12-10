@@ -80,7 +80,7 @@
             </div>
             <div class="form-group mt-3">
                 <label for="review-comment">Введите текст</label>
-                <textarea requier name="comment" id="review-comment" class="form-control" rows="3"></textarea>
+                <textarea required name="comment" id="review-comment" class="form-control" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-primary mt-3">Отправить</button>
         </form>
