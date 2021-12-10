@@ -37,30 +37,15 @@
             </div> 
             <div class=" form-group mt-3">
                 <p>В каких магазинах доступно?</p>
+                @foreach ($shops as $shop)
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="1" id="shops_1" name="shops_1">
-                    <label class="form-check-label" for="shops_1">
-                    Большая Семёновская
+                    <input class="form-check-input" type="checkbox" value="1" id="shops_{{$shop->id}}"  name="shops_{{$shop->id}}">
+                    <label class="form-check-label" for="shops_{{$shop->id}}">
+                    {{$shop->name}}
                     </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="1" id="shops_2" name="shops_2">
-                    <label class="form-check-label" for="shops_2">
-                    Тверская
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="1" id="shops_3" name="shops_3">
-                    <label class="form-check-label" for="shops_3">
-                    Таганская
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="1" id="shops_4" name="shops_4">
-                    <label class="form-check-label" for="shops_4">
-                    Марьино
-                    </label>
-                </div>
+                </div> 
+                @endforeach
+                
             </div>
             <button type="submit" class="btn btn-primary mt-3">Отправить</button>
         </form>

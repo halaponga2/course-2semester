@@ -6,9 +6,14 @@ use Illuminate\Http\Request;
 use App\Models\Goods;
 use App\Models\GoodsReviews;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Shops;
 
 class GoodsController extends Controller
 {
+    public function create(){
+        return view('createGoods', ['shops'=>Shops::all()]);
+    }
+
     public function save(Request $request){
         $good= new Goods;
         $good->name=request('name');
@@ -18,15 +23,13 @@ class GoodsController extends Controller
         $request->validate(['image'=>'required|image|mimes:jpg,png,jpeg,svg|max:10240']);
         $good->image=$request->file('image')->store('public/images');
         $good->save();
-        if(request('shops_1') === NULL){$shops_1= 0;} else {$shops_1=1;}
-        if(request('shops_2') === NULL){$shops_2= 0;} else {$shops_2=1;}
-        if(request('shops_3') === NULL){$shops_3= 0;} else {$shops_3=1;}
-        if(request('shops_4') === NULL){$shops_4= 0;} else {$shops_4=1;}
-        $good->shops()->attach([1=>['available' => $shops_1],
-        2=>['available' => $shops_2],
-        3=>['available' => $shops_3],
-        4=>['available' => $shops_4]]);
-        return redirect('/goods');
+        $shops = Shops::all();
+        foreach ($shops as $shop){
+            $available = request('shops_'.$shop->id);
+            $good->shops()->attach($shop->id,['available' => $available]);
+        }
+        
+        return redirect ('/goods');
         
     }
 
@@ -53,7 +56,7 @@ class GoodsController extends Controller
 
     public function edit($id){
         $good = Goods::findOrFail($id);
-        return view('edit', ['good'=>$good]);
+        return view('edit', ['good'=>$good,'shops'=>Shops::all()]);
     }
     
     public function update($id, Request $request){
@@ -69,14 +72,11 @@ class GoodsController extends Controller
         }
         $good->save();
         $good->shops()->detach();
-        if(request('shops_1') === NULL){$shops_1= 0;} else {$shops_1=1;}
-        if(request('shops_2') === NULL){$shops_2= 0;} else {$shops_2=1;}
-        if(request('shops_3') === NULL){$shops_3= 0;} else {$shops_3=1;}
-        if(request('shops_4') === NULL){$shops_4= 0;} else {$shops_4=1;}
-        $good->shops()->attach([1=>['available' => $shops_1],
-        2=>['available' => $shops_2],
-        3=>['available' => $shops_3],
-        4=>['available' => $shops_4]]);
+        $shops = Shops::all();
+        foreach ($shops as $shop){
+            $available = request('shops_'.$shop->id);
+            $good->shops()->attach($shop->id,['available' => $available]);
+        }
         return redirect('/goods/'.$id);
     }
 
