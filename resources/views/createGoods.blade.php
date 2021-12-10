@@ -8,7 +8,7 @@
             @csrf
             <div class="form-group">
                 <label for="name">Введите название товара</label>
-                <input  id="name" name="name" type="text" class="form-control">
+                <input required id="name" name="name" type="text" class="form-control">
             </div>
             <div class="form-group mt-3">
                 <label for="name">Выберите изображение товара</label>
@@ -29,11 +29,11 @@
             </div>
             <div class="form-group mt-3">
                 <label for="manufacturer">Введите изготовителя</label>
-                <input id="manufacturer" name="manufacturer" type="text" class="form-control">
+                <input required id="manufacturer" name="manufacturer" type="text" class="form-control">
             </div>
             <div class=" form-group mt-3">
                 <label for="description" class="form-label">Введите описание</label>
-                <textarea class="form-control" id="description" rows="3" name="description"></textarea>
+                <textarea required class="form-control" id="description" rows="3" name="description"></textarea>
             </div> 
             <div class=" form-group mt-3">
                 <p>В каких магазинах доступно?</p>
