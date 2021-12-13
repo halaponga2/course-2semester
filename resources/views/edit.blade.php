@@ -37,9 +37,9 @@
             </div> 
             <div class=" form-group mt-3">
                 <p>В каких магазинах доступно?</p>
-                @foreach ($shops as $shop)
+                @foreach ($good->shops as $shop)
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="1" id="shops_{{$shop->id}}"  name="shops_{{$shop->id}}">
+                    <input class="form-check-input" type="checkbox" value="1" id="shops_{{$shop->id}}"  name="shops_{{$shop->id}}" @if($shop->pivot->available===1)checked @endif>
                     <label class="form-check-label" for="shops_{{$shop->id}}">
                     {{$shop->name}}
                     </label>
