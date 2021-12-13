@@ -35,6 +35,10 @@
                 <label for="description" class="form-label">Введите описание</label>
                 <textarea required class="form-control" id="description" rows="3" name="description"></textarea>
             </div> 
+            <div class="form-group mt-3">
+                <label for="price">Введите цену</label>
+                <input required id="price" name="price" type="number" class="form-control" min="0" max="100000">
+            </div>
             <div class=" form-group mt-3">
                 <p>В каких магазинах доступно?</p>
                 @foreach ($shops as $shop)

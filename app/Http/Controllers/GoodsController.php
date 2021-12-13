@@ -22,6 +22,7 @@ class GoodsController extends Controller
         $good->description=request('description');
         $request->validate(['image'=>'required|image|mimes:jpg,png,jpeg,svg|max:10240']);
         $good->image=$request->file('image')->store('public/images');
+        $good->price=request('price');
         $good->save();
         $shops = Shops::all();
         foreach ($shops as $shop){
@@ -70,6 +71,7 @@ class GoodsController extends Controller
             Storage::delete($good->image);
             $good->image=$request->file('image')->store('public/images');
         }
+        $good->price=request('price');
         $good->save();
         $good->shops()->detach();
         $shops = Shops::all();

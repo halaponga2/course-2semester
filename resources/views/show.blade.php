@@ -34,6 +34,7 @@
             <div class="goods__shops col">
                 <p><b>Описание:</b> {{$good->description}}</p>
                 <p><b>Производитель:</b> {{$good->manufacturer}}</p>
+                <p><b>Цена:</b> {{$good->price}} руб.</p>
                 <h5 >Доступность в магазинах:</h5>
                 <ul class="shop-list">
                     @foreach ($good->shops as $shop)
